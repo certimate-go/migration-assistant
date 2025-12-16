@@ -1,6 +1,6 @@
 ﻿# Certimate Migaration Assistant
 
-Help you migrate your data from [Certimate](https://github.com/certimate-go/certimate) v0.2.x to v0.4.x.
+Help you migrate your data from [Certimate](https://github.com/certimate-go/certimate) v0.2.x to v0.4.x. Transfer the "domains" data to the "workflows" data.
 
 ---
 
