@@ -429,7 +429,7 @@ const Migration = () => {
       const workflow = await pb2.collection("workflow").getOne(domain.id);
 
       const record: { id: string; } & Record<string, unknown> = {
-        id: domain.id,
+        id: domain.lastDeployment,
         trigger: "scheduled",
         status: "succeeded",
         workflowRef: workflow.id,
@@ -461,13 +461,14 @@ const Migration = () => {
       }
 
       const workflow = await pb2.collection("workflow").getOne(domain.id);
+      const workflowRun = await pb2.collection("workflow_run").getOne(domain.lastDeployment);
 
       const record: { id: string; } & Record<string, unknown> = {
-        id: domain.id,
+        id: domain.lastDeployment,
         nodeId: workflowApplyNodeMap.get(workflow.id),
         nodeConfig: workflow.graphContent.nodes.find((n: any) => n.id === workflowApplyNodeMap.get(workflow.id)).data.config,
         workflowRef: workflow.id,
-        runRef: domain.id,
+        runRef: workflowRun.id,
         outputs: [{ type: "ref", name: "certificate", value: `certificate#${domain.id}`, valueType: "string" }],
         succeeded: true,
       };
@@ -495,14 +496,13 @@ const Migration = () => {
       }
 
       const workflow = await pb2.collection("workflow").getOne(domain.id);
-      const workflowRun = await pb2.collection("workflow_run").getOne(domain.id);
-      const workflowOutput = await pb2.collection("workflow_output").getOne(domain.id);
+      const workflowRun = await pb2.collection("workflow_run").getOne(domain.lastDeployment);
+      const workflowOutput = await pb2.collection("workflow_output").getOne(domain.lastDeployment);
 
       const x509 = new X509Certificate(domain.certificate);
-      console.log(x509);
 
       const record: { id: string; } & Record<string, unknown> = {
-        id: domain.id,
+        id: domain.lastDeployment,
         acmeCertStableUrl: domain.certStableUrl,
         acmeCertUrl: domain.certUrl,
         subjectAltNames: (x509.getExtension("2.5.29.17") as any)?.names?.items?.map((e: any) => e.value)?.join(";"),
