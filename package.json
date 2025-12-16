@@ -1,0 +1,43 @@
+{
+  "name": "@certimate/migration-assistant",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "tsc -b && vite build"
+  },
+  "packageManager": "pnpm@10.22.0",
+  "dependencies": {
+    "@mantine/core": "^8.3.10",
+    "@mantine/form": "^8.3.10",
+    "@mantine/hooks": "^8.3.10",
+    "@mantine/notifications": "^8.3.10",
+    "@peculiar/x509": "^1.14.2",
+    "immer": "^11.0.1",
+    "nanoid": "^5.1.6",
+    "pocketbase": "^0.26.5",
+    "pocketbase-legacy": "npm:pocketbase@0.21.4",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/node": "^25.0.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-legacy": "^7.2.1",
+    "@vitejs/plugin-react": "^5.1.2",
+    "eslint": "^9.39.1",
+    "eslint-config-mantine": "^4.0.3",
+    "eslint-plugin-oxlint": "^1.32.0",
+    "oxfmt": "^0.17.0",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.49.0",
+    "vite": "^7.2.7",
+    "vite-plugin-singlefile": "^2.3.0"
+  }
+}
