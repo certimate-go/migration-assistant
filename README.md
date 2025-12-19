@@ -4,6 +4,10 @@ Help you migrate your data from [Certimate](https://github.com/certimate-go/cert
 
 ---
 
+## Attention
+
+Please note that this is not a regular option for upgrading. It should only be used when you have a large amount of existing data that needs to be migrated. Otherwise, please follow the [documentation](https://docs.certimate.me/en/docs/migrations/), migrate to v0.3.x first, then migrate to v0.4.x.
+
 ## Preparation
 
 1. Backup.
@@ -25,6 +29,10 @@ Help you migrate your data from [Certimate](https://github.com/certimate-go/cert
 5. Stop the old Certimate service.
 
 ---
+
+## 注意事项
+
+请注意，这不是升级的常规方案。仅当你有大量需要迁移的旧数据时才应使用。否则，请按照[文档](https://docs.certimate.me/docs/migrations/)先迁移到 v0.3.x、再迁移到 v0.4.x。
 
 ## 准备工作
 
