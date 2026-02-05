@@ -400,6 +400,13 @@ const Migration = () => {
           nodes.push(node);
         })
       }
+      nodes.push({
+        id: `m${normalizeNodeId(nanoid(16))}`,
+        type: "end",
+        data: {
+          name: "结束",
+        },
+      })
       record.graphDraft = { nodes };
       record.graphContent = { nodes };
       record.hasContent = true;
